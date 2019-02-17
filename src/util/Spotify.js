@@ -7,7 +7,7 @@ const spotifyPlaylistAPI = 'https://api.spotify.com/v1/users/{userId}/playlists'
 const spotifyPlaylistTracksAPI =
     'https://api.spotify.com/v1/users/{userId}/playlists/{playlistId}/tracks';
 
-const spotifyRedirectUrl = "http://localhost:3000";
+const spotifyRedirectUrl = "https://jammingdemo.herokuapp.com/";
 
 let accessToken;
 let expiresIn;
