@@ -7,6 +7,15 @@ class SearchBar extends React.Component {
         searchTerm: ""
     };
 
+    triggerSearch = (event) => {
+        if (event.key !== "Enter") {
+            return;
+        }
+        this.searchNow();
+        event.preventDefault();
+    };
+
+
     handleTermChange = (event) => {
         this.setState({
             searchTerm: event.target.value
@@ -20,7 +29,9 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div className="SearchBar">
-                <input placeholder="Enter A Song, Album, or Artist" onChange={this.handleTermChange}/>
+                <input placeholder="Enter A Song, Album, or Artist"
+                       onKeyUp={this.triggerSearch}
+                       onChange={this.handleTermChange}/>
                 <a onClick={this.searchNow}>SEARCH</a>
             </div>
         );
